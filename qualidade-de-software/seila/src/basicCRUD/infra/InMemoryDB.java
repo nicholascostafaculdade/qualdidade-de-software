@@ -7,10 +7,22 @@ import basicCRUD.repositories.IUserRepository;
 import basicCRUD.repositories.InMemoryUserRepository;
 
 public class InMemoryDB extends Database {
-	public IUserRepository userRepository;
+    private ArrayList<User> users = new ArrayList<>();
+    public IUserRepository userRepository;
 
-	public InMemoryDB() {
-		this.setUsers(new ArrayList<User>());
-		this.userRepository = new InMemoryUserRepository(this);
-	}
+    public InMemoryDB() {
+        super();
+        this.setUsers(new ArrayList<>());
+        this.userRepository = new InMemoryUserRepository(this);
+    }
+
+    @Override
+    public ArrayList<User> getUsers() {
+        return this.users;
+    }
+
+    @Override
+    public void setUsers(ArrayList<User> users) {
+        this.users = users;
+    }
 }

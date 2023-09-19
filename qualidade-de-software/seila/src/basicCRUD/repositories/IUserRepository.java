@@ -5,9 +5,13 @@ import java.util.ArrayList;
 import basicCRUD.models.User;
 
 public interface IUserRepository {
-	public ArrayList<User> getUsers();
-	public User getUser(String ra);
-	public void updateUser(User user);
-	public User createUser(String name, String ra, String course, String shift, char sex);
-	public void deleteUser(String ra);
+    ArrayList<User> getUsers();
+
+    User getUser(String ra);
+
+    void updateUser(User user);
+
+    void createUser(String name, String ra, String course, String shift, char sex);
+
+    void deleteUser(String ra);
 }
